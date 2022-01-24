@@ -6,7 +6,7 @@ class MainBloc {
   Stream<MainPageState> observeMainPageState() => stateSubject;
 
   MainBloc() {
-    stateSubject.add(MainPageState.noFavirotes);
+    stateSubject.add(MainPageState.noFavorites);
   }
 
   void nextState() {
@@ -25,7 +25,7 @@ class MainBloc {
 }
 
 enum MainPageState {
-  noFavirotes,
+  noFavorites,
   minSymbols,
   loading,
   nothingFound,
