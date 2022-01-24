@@ -14,17 +14,16 @@ class SuperheroPage extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            const Center(
+            Center(
               child: Text(
-                "Batman",
-                style: TextStyle(
+                name,
+                style: const TextStyle(
                   fontSize: 20,
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            const SizedBox(),
             Align(
               alignment: Alignment.bottomCenter,
               child: ActionButton(

@@ -47,7 +47,9 @@ class SuperheroCard extends StatelessWidget {
                   Text(
                     realName,
                     style: const TextStyle(
+                      fontSize: 14,
                       color: Colors.white,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
                 ],
