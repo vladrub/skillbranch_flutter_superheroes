@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:superheroes/resources/superheroes_colors.dart';
-import 'package:superheroes/resources/superheroes_images.dart';
 import 'package:superheroes/widgets/action_button.dart';
 
 class InfoWithButton extends StatelessWidget {
@@ -32,24 +31,20 @@ class InfoWithButton extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Center(
-                child: Container(
-                  width: 108,
-                  height: 108,
-                  decoration: const BoxDecoration(
-                    color: SuperheroesColors.blue,
-                    shape: BoxShape.circle,
-                  ),
+              Container(
+                width: 108,
+                height: 108,
+                decoration: const BoxDecoration(
+                  color: SuperheroesColors.blue,
+                  shape: BoxShape.circle,
                 ),
               ),
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.only(top: imageTopPadding),
-                  child: Image.asset(
-                    assetImage,
-                    width: imageWidth,
-                    height: imageHeight,
-                  ),
+              Padding(
+                padding: EdgeInsets.only(top: imageTopPadding),
+                child: Image.asset(
+                  assetImage,
+                  width: imageWidth,
+                  height: imageHeight,
                 ),
               ),
             ],
