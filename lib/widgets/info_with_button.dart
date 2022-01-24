@@ -24,56 +24,55 @@ class InfoWithButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Stack(
-            children: [
-              Container(
-                width: 108,
-                height: 108,
-                decoration: const BoxDecoration(
-                  color: SuperheroesColors.blue,
-                  shape: BoxShape.circle,
-                ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Container(
+              width: 108,
+              height: 108,
+              decoration: const BoxDecoration(
+                color: SuperheroesColors.blue,
+                shape: BoxShape.circle,
               ),
-              Padding(
-                padding: EdgeInsets.only(top: imageTopPadding),
-                child: Image.asset(
-                  assetImage,
-                  width: imageWidth,
-                  height: imageHeight,
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: imageTopPadding),
+              child: Image.asset(
+                assetImage,
+                width: imageWidth,
+                height: imageHeight,
               ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 32,
-              fontWeight: FontWeight.w800,
-              height: 1.1,
             ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 32,
+            fontWeight: FontWeight.w800,
+            height: 1.1,
           ),
-          const SizedBox(height: 20),
-          Text(
-            subtitle.toUpperCase(),
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-            ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          subtitle.toUpperCase(),
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
           ),
-          const SizedBox(height: 30),
-          ActionButton(
-            onTap: () {},
-            text: buttonText,
-          )
-        ],
-      ),
+        ),
+        const SizedBox(height: 30),
+        ActionButton(
+          onTap: () {},
+          text: buttonText,
+        )
+      ],
     );
   }
 }
