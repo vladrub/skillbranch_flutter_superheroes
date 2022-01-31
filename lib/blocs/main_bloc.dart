@@ -54,6 +54,18 @@ class MainBloc {
     searchSubscription?.cancel();
   }
 
+  void removeFavorite() {
+    final List<SuperheroInfo> currentFavorites =
+        favoritesSuperheroesSubject.value;
+
+    if (currentFavorites.isNotEmpty) {
+      favoritesSuperheroesSubject
+          .add(currentFavorites.sublist(0, currentFavorites.length - 1));
+    } else {
+      favoritesSuperheroesSubject.add(SuperheroInfo.mocked);
+    }
+  }
+
   void searchForSuperheroes(final String text) {
     stateSubject.add(MainPageState.loading);
 
@@ -72,7 +84,10 @@ class MainBloc {
   Future<List<SuperheroInfo>> search(final String text) async {
     await Future.delayed(const Duration(seconds: 1));
     // throw Exception();
-    return SuperheroInfo.mocked;
+    return SuperheroInfo.mocked
+        .where((element) =>
+            element.name.toLowerCase().contains(text.toLowerCase()))
+        .toList();
   }
 
   void nextState() {
@@ -134,7 +149,7 @@ class SuperheroInfo {
 
   @override
   String toString() =>
-      'SuperheroeInfo(name: $name, realName: $realName, imageUrl: $imageUrl)';
+      'SuperheroInfo(name: $name, realName: $realName, imageUrl: $imageUrl)';
 
   static const mocked = [
     SuperheroInfo(
